@@ -2,13 +2,15 @@ import { Box, Button, FormHelperText, TextField, Typography } from "@mui/materia
 import { useForm } from "react-hook-form"
 import { DevTool } from "@hookform/devtools";
 import { useAuth } from "../../app/providers/AuthContext";
-import { blueGrey} from '@mui/material/colors';
+import { blueGrey} from '@mui/material/colors';3
+import { useNavigate } from "@tanstack/react-router";
 type FormValues = {
     username: string;
     email: string;
     password: string;
 }
 export default function Login() {
+    const navigate = useNavigate()
     const form = useForm<FormValues>({
         mode: 'onBlur',
         defaultValues: {
@@ -26,6 +28,7 @@ export default function Login() {
             email: data.email,
             password:data.password,
         });
+        navigate({ to: "/profile" });
         console.log("Form submitted", data);
     };
 

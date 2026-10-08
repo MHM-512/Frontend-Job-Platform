@@ -55,8 +55,7 @@ export default function Profile() {
       .matches(/[a-z]+/),
     confimPassword: yup
       .string()
-      .oneOf([yup.ref("password")], "Password not maches")
-      .required(),
+      .oneOf([yup.ref("password")], "Password not maches"),
   });
   //hook form
   const {
@@ -290,7 +289,7 @@ export default function Profile() {
                       </Button>
                     </Box>
                     <Button
-                    sx={{ marginLeft: 4 }}
+                      sx={{ marginLeft: 4 }}
                       variant="contained"
                       color="warning"
                       onClick={logoutBtnHandler}
@@ -304,4 +303,5 @@ export default function Profile() {
           </form>
         </Box>
       </Box>
-    </ThemeProvider> )};
+    </ThemeProvider>)
+};

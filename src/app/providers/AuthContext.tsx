@@ -5,10 +5,10 @@ import {
     type ReactNode,
 } from "react";
 
-type User = {
+export type User = {
     username: string;
     email: string;
-    password: number;
+    password: string;
 };
 
 type AuthContextType = {
